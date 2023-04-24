@@ -1,4 +1,6 @@
 // Array of API URLs to fetch data from
+const all=document.getElementById("output-all")
+const any=document.getElementById("output-any")
 const apiUrls = [
   "https://jsonplaceholder.typicode.com/todos/1",
   "https://jsonplaceholder.typicode.com/todos/2",
@@ -11,5 +13,12 @@ const apiUrls = [
   "https://jsonplaceholder.typicode.com/todos/9",
   "https://jsonplaceholder.typicode.com/todos/10",
 ];
-
+const result1=Promise.all(apiUrls);
+const result2=Promise.all(apiUrls);
+result1.then((value)=>{
+	all.innerText=value;
+})
+result2.then((value)=>{
+	any.innerText=value;
+})
 // You can write your code here
